@@ -23,12 +23,11 @@ public class Comanda implements Serializable, PropertyChangeListener {
     
     public Comanda(){}
 
-    public Comanda(int numComanda, int idproducte, Date data, int quantitat, boolean demana) {
+    public Comanda(int numComanda, int idproducte, Date data, int quantitat) {
         this.numComanda = numComanda;
         this.idproducte = idproducte;
         this.data = data;
         this.quantitat = quantitat;
-        this.demana = demana;
     }
     
     

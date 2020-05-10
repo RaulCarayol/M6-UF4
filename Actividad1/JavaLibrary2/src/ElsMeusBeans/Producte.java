@@ -55,8 +55,16 @@ public class Producte implements Serializable {
         return stockactual;
     }
 
-    public void setStockactual(int stockactual) {
-        this.stockactual = stockactual;
+    public void setStockactual(int stocknuevo) {
+        int valorAnterior = stockactual;
+        stockactual = stocknuevo;
+        //mira si que el stockaje actual nunca baje del minimo
+        //si baja del minimo se tiene que hacer una "comanda" 
+        //para restablecer el stockaje
+        if(getStockminim() > stockactual){
+            propertySupport.firePropertyChange("stockavtual",
+                    valorAnterior,stockactual);
+        }
     }
 
     public int getStockminim() {
